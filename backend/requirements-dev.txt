@@ -1,0 +1,12 @@
+# Development/Testing Dependencies for LLM Council Backend
+# Install with: pip install -r requirements-dev.txt
+
+# Include production dependencies
+-r requirements.txt
+
+# ===== TESTING =====
+# Testing framework for Python
+pytest>=9.0.0
+
+# Async/await support for pytest
+pytest-asyncio>=1.0.0

@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Söhne", "ui-sans-serif", "system-ui", "sans-serif";
+  --font-body: "Söhne", "ui-sans-serif", "system-ui", "sans-serif";
+  --font-mono: "SF Mono", "Menlo", "Monaco", "Courier New", "monospace";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light mode defaults */
+body {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Dark mode defaults */
+html.dark body {
+  background-color: #0d0d12;
+  color: #d1d5db; /* Much darker text for better contrast */
+}
+
+/* Ensure all text in dark mode has minimum contrast */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Light mode defaults */
+html.light body {
+  background-color: #f9fafb;
+  color: #111827; /* Darker text for better contrast */
+}
+
+/* Improve text rendering and contrast */
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode text improvements - force much darker text */
+html.dark .text-gray-100,
+html.dark .text-gray-50,
+html.dark .text-gray-200,
+html.dark .text-gray-300 {
+  color: #9ca3af !important; /* Much darker gray for excellent readability */
+}
+
+html.dark .text-gray-400 {
+  color: #d1d5db !important;
+}
+
+html.dark .text-gray-500 {
+  color: #e5e7eb !important;
+}
+
+/* Force better contrast for all text in dark mode */
+html.dark * {
+  text-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.7);
+}
+
+/* Light mode scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: rgba(229, 231, 235, 0.5);
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.5);
+}
+
+/* Custom scrollbar for response cards */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.5);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid rgb(59 130 246 / 0.8);
+  outline-offset: 2px;
+}
+
+/* Dark mode focus improvements */
+html.dark *:focus-visible {
+  outline: 2px solid rgb(96 165 250 / 0.9);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Better button reset */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Text selection */
+::selection {
+  background-color: rgb(59 130 246 / 0.3);
+  color: inherit;
+}
+
+/* Link styles */
+a {
+  color: rgb(96 165 250);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(59 130 246);
+}
+
+/* Code blocks */
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Input styles */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Remove default styles */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply fade in to main content */
+main > * {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Stagger animations for response cards */
+.response-card {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.response-card:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.response-card:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.response-card:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.response-card:nth-child(4) {
+  animation-delay: 150ms;
+}
+
+/* Better focus for keyboard navigation */
+:focus-visible {
+  outline: 2px solid rgb(59 130 246 / 0.8);
+  outline-offset: 2px;
+}
+
+html.dark :focus-visible {
+  outline: 2px solid rgb(96 165 250 / 0.9);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgb(59 130 246 / 0.8);
+  outline-offset: 2px;
+}
+
+html.dark button:focus-visible,
+html.dark a:focus-visible,
+html.dark input:focus-visible,
+html.dark textarea:focus-visible,
+html.dark select:focus-visible {
+  outline: 2px solid rgb(96 165 250 / 0.9);
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

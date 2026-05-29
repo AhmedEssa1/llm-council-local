@@ -1,0 +1,122 @@
+ 🎯 Exact Prompts for OpenClaw + LLM Council MCP:
+
+  🚀 Quick Start Prompt:
+
+  Connect to the LLM Council MCP server at: C:\DATA\llm-council-local\backend\mcp_server\server.py
+
+  This MCP server provides 3 tools:
+  1. council_query - Query multiple AI models and get synthesized answers
+  2. council_list - List all available council members
+  3. council_availability - Check which models are currently available
+
+  Start by using the council_list tool to see what models are available, then use council_query to ask questions.
+
+  ---
+  📋 Specific Task Prompts:
+
+  1. Discovery & Setup:
+
+  First, use the council_list tool to see all available models in the LLM Council. Then check which ones are available
+  using council_availability. Tell me what models I can use.
+
+  2. Basic Query:
+
+  Use the council_query tool to ask: "What is the capital of France?" - Use all available models for the best answer.
+
+  3. Single Model Query:
+
+  Use council_query with models parameter set to ["ollama-gemma4"] to ask: "Explain quantum computing in simple terms"
+
+  4. Multi-Model Comparison:
+
+  Use council_query with models ["gemini-local", "ollama-gemma4"] to ask: "Compare Python vs JavaScript for web
+  development" - let me see how each model responds differently.
+
+  ---
+  🔧 Technical Configuration Prompt:
+
+  Configure the LLM Council MCP server from: C:\DATA\llm-council-local\backend\mcp_server\server.py
+
+  The server name is "llm-council" and it runs on stdio transport. Available tools:
+  - council_query: requires "prompt" (string), optional "models" (array of strings), optional "chairman" (string)
+  - council_list: no parameters required
+  - council_availability: no parameters required
+
+  The backend API runs on http://localhost:8000 and the MCP server will communicate with it.
+
+  ---
+  🎯 Example Workflow Prompt:
+
+  I want to use the LLM Council MCP server. Here's the workflow:
+
+  1. First, use council_list to see what AI models are available
+  2. Then use council_availability to check which ones are running
+  3. Finally, use council_query to ask: "What are the benefits of using TypeScript over JavaScript?"
+
+  For the council_query, use the chairman parameter set to "gemini-local" to get the best synthesis.
+
+  ---
+  🚀 Power User Prompt:
+
+  Connect to LLM Council MCP server and give me a comprehensive overview:
+
+  1. List all council members using council_list
+  2. Check availability using council_availability
+  3. Ask this question using only the fastest available model: "What is 2+2?"
+  4. Then ask the same question using all available models: "What is 2+2?"
+  5. Compare the responses and tell me which model was fastest and most accurate.
+
+  ---
+  🎯 Specific Question Prompts:
+
+  Coding Help:
+
+  Use council_query with the LLM Council MCP to ask: "Write a Python function to calculate fibonacci numbers" - use the
+   ollama-gemma4 model for speed.
+
+  Analysis Task:
+
+  Use the LLM Council MCP server to analyze: "Compare the pros and cons of microservices vs monolithic architecture" -
+  query gemini-local and ollama-gemma4 models for comprehensive analysis.
+
+  Creative Task:
+
+  Ask the LLM Council: "Write a short poem about artificial intelligence" - use all available models and let the
+  chairman synthesize the best poetic elements from each response.
+
+  ---
+  🔧 Setup & Configuration Prompt:
+
+  I need to configure the LLM Council MCP server.
+
+  Server location: C:\DATA\llm-council-local\backend\mcp_server\server.py
+  Server name: llm-council
+  Transport: stdio
+
+  Available tools:
+  1. council_query - for querying AI models
+  2. council_list - for discovering available models
+  3. council_availability - for checking model status
+
+  Backend API: http://localhost:8000
+  Config file: C:\DATA\llm-council-local\config\council.yaml
+
+  Please connect to this MCP server and start with council_list to show me what models I can use.
+
+  ---
+  🎯 Debug & Testing Prompt:
+
+  Test the LLM Council MCP server by:
+  1. Using council_list to see all members
+  2. Using council_availability to check status
+  3. Using council_query with a simple test question: "What is 2+2?"
+  4. Tell me which models responded, their response times, and the final synthesized answer.
+
+  ---
+  🚀 Recommended First Prompt:
+
+  Connect to the LLM Council MCP server and use council_list to see what AI models are available, then use
+  council_availability to check which ones are running. Finally, ask: "What is the meaning of life?" using all
+  available models.
+
+  ---

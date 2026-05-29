@@ -1,0 +1,42 @@
+# LLM Council Backend - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# ===== CORE FRAMEWORK =====
+# Web framework for building APIs with Python
+fastapi>=0.100.0
+
+# ASGI server for running FastAPI applications
+uvicorn>=0.23.0
+
+# ===== DATA VALIDATION =====
+# Data validation using Python type annotations
+pydantic>=2.0.0
+
+# ===== CONFIG & ENVIRONMENT =====
+# Read environment variables from .env file
+python-dotenv>=1.0.0
+
+# YAML configuration file parsing (for council.yaml)
+pyyaml>=6.0
+
+# ===== HTTP CLIENTS =====
+# Modern async HTTP client for Ollama adapter
+httpx>=0.24.0
+
+# ===== AI MODEL APIs =====
+# OpenAI API client (for GPT-4, etc.)
+openai>=1.0.0
+
+# Anthropic API client (for Claude models)
+anthropic>=0.18.0
+
+# ===== INTEGRATION =====
+# Model Context Protocol server (for OpenClaw integration)
+mcp>=1.0.0
+
+# File watching for config hot-reload
+watchdog>=3.0.0
+
+# ===== TESTING (Optional) =====
+# Install separately for development/testing:
+# pip install pytest pytest-asyncio

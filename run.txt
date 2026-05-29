@@ -1,0 +1,32 @@
+# LLM Council - Startup Commands
+# Use this file to quickly start all components
+
+## Backend (REQUIRED - must be running first)
+cd C:\DATA\llm-council-local\backend
+python main.py
+
+## Frontend (REQUIRED - for web interface)
+cd C:\DATA\llm-council-local\frontend
+npm run dev
+
+## MCP Server (OPTIONAL - for OpenClaw/Claude Desktop)
+cd C:\DATA\llm-council-local\backend
+python start_mcp_server.py
+
+## IMPORTANT: After changing config/council.yaml
+# You MUST restart the backend for changes to take effect!
+# Config is loaded ONCE at startup - never auto-reloads!
+# 1. Kill backend: taskkill /F /IM python.exe
+# 2. Restart: cd backend && python main.py
+# 3. Refresh frontend: Press F5 in browser
+
+## URLs
+- Backend API: http://localhost:8000
+- Frontend: http://localhost:5173
+- API Docs: http://localhost:8000/docs
+
+## Troubleshooting
+- Port 8000 in use: taskkill /F /IM python.exe
+- Frontend not responding: Ctrl+C and npm run dev again
+- Models not working: Check config/council.yaml and restart backend
+- Timeout issues: Increase timeout in config, then RESTART BACKEND

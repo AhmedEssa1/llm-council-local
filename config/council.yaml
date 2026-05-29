@@ -1,0 +1,74 @@
+chairman: lan-gemma31b
+council_members:
+- args:
+  - --print
+  command: claude
+  enabled: true
+  host: null
+  id: claude-local
+  model: null
+  name: Claude CLI
+  provider: null
+  timeout: null
+  type: cli
+- args:
+  - -p
+  command: gemini
+  enabled: true
+  host: null
+  id: gemini-local
+  model: null
+  name: Gemini CLI
+  provider: null
+  timeout: null
+  type: cli
+- args: []
+  command: null
+  enabled: true
+  host: localhost
+  id: ollama-gemma4
+  model: gemma4:e4b
+  name: Gemma 4 (9B)
+  provider: null
+  timeout: null
+  type: ollama
+- args: []
+  command: null
+  enabled: true
+  host: localhost
+  id: ollama-gemma26b
+  model: gemma4:26b
+  name: Gemma 4 (26B) - LOCAL
+  provider: null
+  timeout: null
+  type: ollama
+- args: []
+  command: null
+  enabled: true
+  host: 10.11.9.58
+  id: lan-gemma31b
+  model: gemma4:31b
+  name: Gemma 4 (31B) - LAN PC
+  provider: null
+  timeout: null
+  type: ollama
+- args: []
+  command: null
+  enabled: true
+  host: null
+  id: api-gpt4
+  model: gpt-4
+  name: GPT-4
+  provider: openai
+  timeout: null
+  type: api
+- args: []
+  command: null
+  enabled: true
+  host: null
+  id: api-claude
+  model: claude-3-sonnet-20240229
+  name: Claude
+  provider: anthropic
+  timeout: 90
+  type: api
