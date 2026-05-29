@@ -59,9 +59,8 @@ python start_mcp_server.py
 6. [API Reference](#api-reference)
 7. [Frontend](#frontend)
 8. [MCP Integration](#mcp-integration)
-9. [Known Issues & Solutions](#known-issues--solutions)
-10. [Development Guidelines](#development-guidelines)
-11. [Troubleshooting](#troubleshooting)
+9. [Development Guidelines](#development-guidelines)
+10. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -511,68 +510,6 @@ mcpServers:
 **📚 Documentation:**
 - `MCP_INTEGRATION.md` - Comprehensive guide
 - `MCP_QUICKSTART.md` - Quick reference card
-
----
-
-## Known Issues & Solutions
-
-### ✅ **FIXED ISSUES:**
-
-1. **❌ Dark Mode Contrast (FIXED - 2026-04-08)**
-   - **Problem:** Text was invisible/too light (white) on dark backgrounds
-   - **Solution:** Changed to much darker text colors (`gray-400` → `gray-500`)
-   - **Status:** ✅ **RESOLVED** - Excellent contrast, clearly readable
-
-2. **❌ Ollama Timeout Errors (FIXED - 2026-04-08)**
-   - **Problem:** "Ollama request timed out after 120 seconds" for large models
-   - **Solution:** Implemented per-model timeout configuration (30s-300s)
-   - **Status:** ✅ **RESOLVED** - Configurable timeouts prevent errors
-
-3. **❌ Button Borders Not Visible (FIXED)**
-   - **Problem:** Button borders were too subtle in dark mode
-   - **Solution:** Improved border colors and card background contrast
-   - **Status:** ✅ **RESOLVED** - All interactive elements clearly visible
-
-4. **❌ YAML Configuration Issues (FIXED)**
-   - **Problem:** Used Python object serialization (`!!python/object/apply`)
-   - **Solution:** Simplified to plain YAML with string types
-   - **Status:** ✅ **RESOLVED** - Portable, human-readable format
-
-5. **❌ MCP Server Import Conflicts (FIXED)**
-   - **Problem:** `mcp/` directory conflicted with `mcp` package
-   - **Solution:** Renamed to `mcp_server/` directory
-   - **Status:** ✅ **RESOLVED** - No more circular imports
-
-### ⚠️ **REMAINING ISSUES:**
-
-1. **Backend Port Conflicts**
-   - **Issue:** `[Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000)`
-   - **Workaround:** Kill existing processes or change port in main.py
-   - **Solution:** `netstat -ano | findstr :8000` then `taskkill /PID <PID> /F`
-
-2. **Import Path Quirk**
-   - **Issue:** Backend uses relative imports, must run from `backend/` directory
-   - **Workaround:** Always run `cd backend && python main.py`
-   - **Fix:** Could add to `sys.path` or use absolute imports
-
-3. **CLI Adapter Behavior**
-   - **Issue:** Some CLIs may require interactive mode
-   - **Workaround:** `--print` flag handles claude CLI
-   - **Note:** Gemini CLI behavior may vary by version
-
-4. **Config Hot-Reload**
-   - **Issue:** Must restart backend after config changes
-   - **Workaround:** Manual restart required
-   - **Enhancement:** Could add file watching for auto-reload
-
-5. **Remote Agent Hub Endpoints**
-   - **Issue:** `POST /agent/register`, `GET /agent/{id}/tasks` not implemented
-   - **Status:** ❌ **NOT IMPLEMENTED** - See agent/agent.py for expected interface
-
-6. **Admin UI Forms**
-   - **Issue:** Admin page is view-only, can't add/edit members
-   - **Workaround:** Edit `config/council.yaml` directly
-   - **Status:** ⚠️ **PARTIAL** - View-only, no forms yet
 
 ---
 
